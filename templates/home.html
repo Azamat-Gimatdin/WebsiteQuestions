@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% set list = [("Часто задаваемые вопросы (FAQ)", "Ответы на самые популярные вопросы."), ("Домашние задания", "Решения и ответы на школьные задания, тесты, контрольные.")] %}
+<h1>Доступные темы</h1>
+<br>
+{% for item in list %}
+    <div align="center" class="col-md6 border rounded">
+        <h2>{{item[0]}}</h2>
+        <div>
+            {{ item[1] }}
+        </div>
+    </div>
+    <div align="center">
+        <a href="/questions/{{ loop.index}}" class="btn btn-warning">
+            Открыть
+        </a>
+    </div>
+    <br>
+    {% endfor %}
+</div>
+{% endblock %}
